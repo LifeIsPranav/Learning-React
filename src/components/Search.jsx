@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const Search = ({searchTerm, setSearchTerm}) => {
   return (
     <div className='search'>
@@ -7,6 +8,7 @@ const Search = ({searchTerm, setSearchTerm}) => {
         <img src="search.png" alt="Search Icon" />
         <input 
           type='text' 
+          className='searchField'
           placeholder='Search through Thousands of Movies'
           onChange={(e) => setSearchTerm(e.target.value)}
         />

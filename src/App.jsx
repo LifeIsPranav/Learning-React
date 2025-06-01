@@ -4,6 +4,7 @@ import Spinner from './components/Spinner';
 import MovieCard from './components/MovieCard';
 import { useDebounce } from 'react-use'
 import { getTrendingMovies, updateSearchCount } from './appwrite';
+import startTour from './utils/StartTour'
 
 const API_BASE_URL = 'https://api.themoviedb.org/3'
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
@@ -79,6 +80,7 @@ const App = () => {
 
   useEffect(() => {
     loadTrendingMovies()
+    startTour()
   }, [])
 
 
@@ -87,6 +89,7 @@ const App = () => {
       <div className='pattern' />
       <div className='wrapper'>
         <header>
+          {/* <button className='text-white' onClick={startTour}>Tour?</button> */}
           <img src="./hero.png" alt="Hero_banner" />
           <h1>Find <span className='text-gradient'>Movies</span> You'll Enjoy Without the Hassle</h1>
         <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
@@ -122,6 +125,8 @@ const App = () => {
             </ul>
           )}
         </section>
+
+        <footer className='mt-20 text-gradient endPage'>This is the end of the page!</footer>
 
       </div>
     </main>
